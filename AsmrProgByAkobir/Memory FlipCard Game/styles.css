@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+p {
+    font-size: 20px;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    background: #673ab7;
+    justify-content: center;
+}
+
+.wrapper {
+    padding: 2rem;
+    border-radius: 12px;
+    background: #f8f8f8;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.cards, .card, .view, .details, p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards {
+    width: 350px;
+    height: 350px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cards .card {
+    cursor: pointer;
+    position: relative;
+    perspective: 1000px; /* 3D aylanish (flip) effektlarida ishlatiladi */
+    transform-style: preserve-3d; /* aylanishda har ikki tomon ham 3D holatda qoladi */
+    width: calc(100% / 4 - 10px); /* cardsni width xossasiga qarab ishlaydi: 25% - 10px = (350 * 25 / 100)px - 10px = 77.5px */
+    height: calc(100% / 4 - 10px); /* cardsni height xossasiga qarab ishlaydi: 25% - 10px = (350 * 25 / 100)px - 10px = 77.5px */
+}
+
+.card.shake {
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-13px);
+    }
+
+    40% {
+        transform: translateX(13px);
+    }
+
+    60% {
+        transform: translateX(-8px);
+    }
+
+    80% {
+        transform: translateX(8px);
+    }
+}
+
+.cards .card .view {
+    width: 100%;
+    height: 100%;
+    user-select: none; /* foydalanuvchi matn yoki elementlarni tanlay olmaydi */
+    position: absolute;
+    background: #fff;
+    border-radius: 7px;
+    pointer-events: none; /* .view elementi bosilmaydi, barcha sichqoncha hodisalari ota elementga (.card) o'tadi */
+    backface-visibility: hidden; /* karta orqasi yuzasining orqa tomoni ko‘rinmasligi ta'minlanadi */
+    transition: transform 0.25s linear;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card .front-view i {
+    font-size: 40px;
+}
+
+.card .back-view i {
+    font-size: 40px;
+}
+
+.card .back-view {
+    transform: rotateY(-180deg);
+}
+
+.card.flip .front-view {
+    transform: rotateY(180deg);
+}
+
+.card.flip .back-view {
+    transform: rotateY(0);
+}
+
+.details {
+    width: 100%;
+    padding: 0 20px;
+    margin-top: 15px;
+    border-radius: 7px;
+    background: #fff;
+    height: calc(100% / 4 - 30px);
+    justify-content: space-between;
+}
+
+.details p {
+    height: 17px;
+    font-size: 18px;
+    padding-right: 18px;
+    border-right: 1px solid #ccc;
+}
+
+.details p span {
+    margin-left: 8px;
+}
+
+.details p b {
+    font-weight: 500;
+}
+
+.details button {
+    cursor: pointer;
+    font-size: 18px;
+    color: #673ab7;
+    padding: 4px 11px;
+    border-radius: 4px;
+    background: #fff;
+    transition: 0.3s ease;
+    border: 2px solid #673ab7;
+}
+
+.details button:hover {
+    color: #fff;
+    background: #673ab7;
+}
+
+::selection {
+    color: #fff;
+    background: #673ab7;
+}
+
+@media only screen and (max-width: 700px) {
+    .cards {
+        width: 350px;
+        height: 350px;
+    }
+
+    .card .front-view i {
+        font-size: 35px;
+    }
+
+    .card .back-view i {
+        font-size: 35px;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .cards {
+        width: 300px;
+        height: 300px;
+    }
+
+    .card .back-view i {
+        font-size: 30px;
+    }
+
+    .details {
+        padding: 0 15px;
+        margin-top: 10px;
+        height: calc(100% / 4 - 20px);
+    }
+
+    .details p {
+        height: 15px;
+        font-size: 17px;
+        padding-right: 13px;
+    }
+
+    .details button {
+        border: none;
+        color: #fff;
+        font-size: 13px;
+        padding: 5px 10px;
+        background: #673ab7;
+    }
+}
