@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 32px;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #7b1fa2;
+}
+
+h1 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    color: #26384e;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    transition-delay: 0.2s;
+    overflow: hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #889db8;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    transition-delay: 0.3s;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.swiper-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+}
+
+.swiper-container {
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 100%;
+    position: relative;
+    max-width: 420px;
+    height: 100%;
+    max-height: 420px;
+    border-radius: 10px;
+}
+
+.slider-image-wrapper {
+    height: 210px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider-item {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    opacity: 0;
+    background-color: #fff;
+    cursor: grab;
+}
+
+.slider-item-content {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.4s;
+}
+
+.slider-item-content > * {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.swiper-slide-active .slider-item-content > * {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.slider-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.2s;
+}
+
+.swiper-pagination {
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: auto !important;
+}
+
+.swiper-pagination-bullet {
+    border-radius: 10px;
+    width: 8px;
+    height: 8px;
+    line-height: 30px;
+    font-size: 12px;
+    opacity: 1;
+    background-color: #ce93d8;
+    display: inline-block;
+    margin-right: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #7b1fa2;
+    width: 20px;
+    border-radius: 10px;
+}
+
+.slider-buttons {
+    position: absolute;
+    display: flex;
+    top: 100%;
+    justify-content: flex-end;
+    width: 100%;
+    padding-top: 8px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    position: relative;
+    margin-left: 4px;
+}
+
+.swiper-button-next::before,
+.swiper-button-prev::before  {
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    height: 1px;
+    width: 0;
+    left: 0;
+    bottom: -1px;
+    transition: 0.2s;
+}
+
+.swiper-button-next:hover:before,
+.swiper-button-prev:hover:before {
+    width: 100%;
+}
+
+@media only screen and (max-width: 520px) {
+    h1 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .swiper-button-next:hover:before,
+    .swiper-button-prev:hover:before {
+        display: none;
+    }
+}
