@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.navbar {
+    display: flex;
+    padding: 1.5rem 2.5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .navbar__logo {
+    flex: 1;
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.navbar .navbar__notch {
+    gap: 1.5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+    background: #f7f7f7;
+    padding: 0.5rem 1.5rem;
+    justify-content: center;
+    border: 2px solid #ccc;
+}
+
+.navbar .navbar__notch p {
+    font-weight: 500;
+    font-size: 0.8rem;
+    position: relative;
+}
+
+.navbar .navbar__notch p::before {
+    top: 50%;
+    left: -0.5rem;
+    content: '';
+    width: 0.3rem;
+    height: 0.3rem;
+    position: absolute;
+    background: #000;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.navbar .navbar__notch a {
+    font-weight: 600;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.navbar .navbar__notch a::before {
+    top: -100%;
+    color: #fff;
+    content: 'New';
+    padding: 2px 6px;
+    font-size: 0.7rem;
+    position: absolute;
+    background: #d85f44;
+    border-radius: 0.6rem;
+    transform: translateY(-50%);
+    transform: translateX(150%);
+}
+
+.navbar .navbar__menu {
+    flex: 1;
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* justify-content: space-evenly; */
+}
+
+.navbar .navbar__menu .navbar__menu-link {
+    font-weight: 600;
+    font-size: 0.8rem;
+    border-radius: 1.5rem;
+    background: #f7f7f7;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+.navbar .navbar__menu .navbar__menu-link:hover {
+    background: #edefde;
+    border-color: transparent;
+}
