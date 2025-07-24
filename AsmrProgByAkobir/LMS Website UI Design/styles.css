@@ -76,7 +76,7 @@ img {
     background: #d85f44;
     border-radius: 0.6rem;
     transform: translateY(-50%);
-    transform: translateX(150%);
+    transform: translateX(175%);
 }
 
 .navbar .navbar__menu {
@@ -85,7 +85,6 @@ img {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    /* justify-content: space-evenly; */
 }
 
 .navbar .navbar__menu .navbar__menu-link {
@@ -98,7 +97,111 @@ img {
     transition: all 0.3s ease;
 }
 
-.navbar .navbar__menu .navbar__menu-link:hover {
+.navbar .navbar__menu .navbar__menu-link:hover,
+.hero-course__mode-option.selected,
+.hero-course__duration-option.selected {
     background: #edefde;
     border-color: transparent;
+}
+
+.hero {
+    gap: 3rem;
+    display: flex;
+    padding: 0 2.5rem;
+    margin-top: 1.5rem;
+    align-items: center;
+    height: calc(100vh - 7rem);
+}
+
+.hero .hero__image {
+    width: 50%;
+    height: 90%;
+    border-radius: 3rem;
+}
+
+.hero .hero-course {
+    width: 50%;
+}
+
+.hero-course .hero-course__title {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-course .hero-course__author {
+    display: inline;
+    font-weight: 600;
+    margin-right: 1rem;
+}
+
+.hero-course .hero-course__rating {
+    gap: 0.5rem;
+    align-items: center;
+    display: inline-flex;
+}
+
+.hero-course .hero-course__rating .hero-course__stars {
+    display: flex;
+    font-size: 1rem;
+}
+
+.hero-course .hero-course__rating .hero-course__reviews {
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.hero-course__label {
+    font-size: 1rem;
+    margin: 1.5rem 0 0.7rem;
+}
+
+.hero-course__mode-option,
+.hero-course__duration-option,
+.hero-course__button {
+    cursor: pointer;
+    font-weight: 600;
+    background: #fff;
+    border-radius: 2rem;
+    margin-left: 0.7rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+.hero-course__mode-option:hover,
+.hero-course__duration-option:hover,
+.hero-course__button:hover {
+    background: #f7f7f7;
+    border: 1px solid #ccc;
+}
+
+.hero-course__actions {
+    margin-top: 2rem;
+}
+
+.hero-course__price {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-left: 0.7rem;
+}
+
+.hero-course__price-original {
+    color: #808080;
+    margin-left: 0.7rem;
+    text-decoration: line-through;
+}
+
+.hero-course__button {
+    padding: 1rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.hero-course__button--enroll {
+    color: #fff;
+    background: #66bb6a;
+    border-color: transparent;
+}
+
+.hero-course__button--enroll:hover {
+    background: #388e3c;
 }
