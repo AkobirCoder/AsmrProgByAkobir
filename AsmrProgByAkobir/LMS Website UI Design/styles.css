@@ -20,8 +20,9 @@ img {
 
 .navbar {
     display: flex;
-    padding: 1.5rem 2.5rem;
     align-items: center;
+    padding: 1.5rem 2.5rem;
+    background: #f6fffe;
     justify-content: space-between;
 }
 
@@ -204,4 +205,17 @@ img {
 
 .hero-course__button--enroll:hover {
     background: #388e3c;
+}
+
+.separator {
+    display: block;
+    font-size: 3rem;
+    font-weight: 600;
+    padding: 0 2.5rem;
+    text-align: center;
+    margin: 4rem 0 4rem;
+}
+
+.program {
+    display: flex;
 }
