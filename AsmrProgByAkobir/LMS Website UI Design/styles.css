@@ -7,6 +7,10 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+html::-webkit-scrollbar {
+    display: none;
+}
+
 a {
     color: #000;
     text-decoration: none;
@@ -18,11 +22,12 @@ img {
     object-fit: cover;
 }
 
+/* navbar section */
+
 .navbar {
     display: flex;
     align-items: center;
     padding: 1.5rem 2.5rem;
-    background: #f6fffe;
     justify-content: space-between;
 }
 
@@ -36,7 +41,7 @@ img {
     gap: 1.5rem;
     display: flex;
     align-items: center;
-    border-radius: 0.5rem;
+    border-radius: 2rem;
     background: #f7f7f7;
     padding: 0.5rem 1.5rem;
     justify-content: center;
@@ -104,6 +109,8 @@ img {
     background: #edefde;
     border-color: transparent;
 }
+
+/* hero section */
 
 .hero {
     gap: 3rem;
@@ -216,6 +223,538 @@ img {
     margin: 4rem 0 4rem;
 }
 
-.program {
+/* program section */
+
+.program,
+.career {
+    gap: 3rem;
     display: flex;
+    padding: 0 2.5rem;
+    margin-top: 1.5rem;
+    align-items: center;
+}
+
+.program .program__info,
+.career .career__details,
+.about .about__details {
+    width: 55%;
+}
+
+.program .program__info .program__title,
+.career .career__details .career__title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.program .program__info .program__description,
+.career .career__details .career__description {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.program__info .program__details {
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.program__details .program__details-duration .program__label,
+.program__details .program__details-format .program__label {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.program__details .program__details-duration .program__duration-list,
+.program__details .program__details-format .program__format-list {
+    list-style: none;
+}
+
+.program__duration-list .program__duration-item,
+.program__format-list .program__format-item {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.program .program__image,
+.career .career__image {
+    width: 45%;
+    justify-self: end;
+}
+
+.program .program__image .program__image-photo,
+.career .career__image .career__image-photo {
+    width: 100%;
+    height: 33.75rem;
+    border-radius: 3rem;
+}
+
+
+/* course-list section */
+
+.course-list {
+    gap: 3rem;
+    display: flex;
+    padding: 0 2.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.course-list .course-list__item {
+    width: 25%;
+    cursor: default;
+    overflow: hidden;
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+}
+
+.course-list .course-list__item:hover {
+    transform: translateY(-1%);
+    box-shadow: 0px 1px 5px 4px #efefef;
+}
+
+.course-list__item .course-list__item-image {
+    width: 100%;
+    height: 20rem;
+    border-radius: 2rem;
+}
+
+.course-list__item .course-list__item-details {
+    display: flex;
+    padding: 0 1rem;
+    align-items: center;
+    margin: 0.6rem 0rem 1.5rem;
+    justify-content: space-between;
+}
+
+.course-list__item .course-list__item-title,
+.course-list__item .course-list__item-price {
+    font-weight: 600;
+}
+
+.course-list__item .course-list__item-price span {
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+.course-list__item .course-list__item-description {
+    padding: 0 1rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-align: justify;
+    margin-bottom: 1rem;
+}
+
+.course-list__item .course-list__item-btn {
+    padding: 0 1rem 1rem;
+}
+
+.course-list__item .course-list__item-btn .course-list__item-button {
+    cursor: pointer;
+    font-weight: 500;
+    background: #fff;
+    border-radius: 2rem;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+.course-list__item .course-list__item-btn .course-list__item-button:hover {
+    background: #ebeddf;
+    border: 1px solid transparent;
+}
+
+
+/* career section */
+
+.career {
+    margin-top: 4rem;
+}
+
+.career .career__details .career__benefits {
+    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.career__benefits .career__benefit-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.career__benefit .career__benefit-description {
+    font-size: 0.9rem;
+}
+
+
+/* about section */
+
+.about {
+    gap: 5rem;
+    display: flex;
+    height: 27.5rem;
+    margin-top: 4rem;
+    border-radius: 3rem;
+    align-items: center;
+    padding: 2rem 0 2rem 6rem;
+    background-color: #a7d4fd;
+    margin: 5rem 2.5rem 0 2.5rem;
+    background-image: 
+        repeating-radial-gradient(circle at 0 0, transparent 0, #a7d4fd 5rem),
+        repeating-linear-gradient(#9ccffa55, #9ccffa);
+    background-size: 200% 200%;
+    background-position: 0% 0%;
+    animation: gradientMove 50s linear infinite reverse;
+}
+
+@keyframes gradientMove {
+    from {
+        background-position: 0% 0%;
+    }
+
+    to {
+        background-position: 100% 100%;
+    }
+}
+
+.about .about__image {
+    width: 27%;
+    height: 85%;
+    border-radius: 2rem;
+    transform: rotate(-10deg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.about__details .about__details-title {
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.about__details .about__details-description {
+    font-size: 1rem;
+    color: #424242;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+}
+
+.about__details .about__details-button {
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about__details .about__details-button:hover {
+    transform: translateY(-5%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/* footer section */
+
+.gradient {
+    margin-top: 4rem;
+    background: 
+        linear-gradient(180deg, 
+            #fff 0%, 
+            #e0f2ff 20%,
+            #b0d4ff 100%);
+}
+
+.gradient .subscription {
+    text-align: center;
+    padding: 3.75rem 2.5rem;
+}
+
+.subscription .subscription__title {
+    font-weight: 600;
+    font-size: 2.5rem;    
+}
+
+.subscription .subscription__description {
+    margin: 1rem 0 2rem;
+}
+
+.subscription .subscription__form {
+    display: inline;
+    position: relative;
+    background: #fff;
+    border-radius: 2rem;
+    padding: 0.8rem 0.5rem;
+}
+
+.subscription__form .subscription__input {
+    width: 20rem;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+}
+
+.subscription__form .subscription__button {
+    border: none;
+    cursor: pointer;
+    border-radius: 2rem;
+    background: #a2cff8;
+    padding: 0.5rem 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.subscription__form .subscription__button:hover {
+    background: #83bff5;
+}
+
+.gradient .footer {
+    display: flex;
+    margin-top: 4rem;
+    padding: 0 2.5rem;
+    flex-direction: column;
+}
+
+.footer .footer-links {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-links .footer__column {
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__column .footer__link {
+    gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.footer__column .footer__link:hover {
+    transform: translateX(0.5rem);
+}
+
+#instagram-icon {
+    background: 
+        linear-gradient(45deg, 
+            #f09433, 
+            #e6683c, 
+            #dc2743, 
+            #cc2366, 
+            #bc1888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#youtube-icon {
+    background: #ff0033;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#github-icon {
+    background: #151b23;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#linkedin-icon {
+    background: #0a66c2;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer .footer__branding .footer__brand-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.footer .footer__copyright {
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 2rem 0 1rem;
+}
+
+@media only screen and (max-width: 1200px) {
+    .navbar .navbar__notch,
+    .program__image {
+        display: none;
+    }
+
+    .navbar .navbar__menu {
+        gap: 0.6rem;
+    }
+
+    .hero-course__mode-option {
+        margin-left: 0 !important;
+    }
+
+    .program {
+        flex-direction: column;
+    }
+
+    .program .program__info {
+        width: 100%;
+    }
+
+    .program__info .program__details {
+        justify-content: space-around;
+    }
+
+    .course-list {
+        flex-wrap: wrap;
+    }
+
+    .course-list .course-list__item {
+        width: 46%;
+    }
+
+    .about {
+        padding: 1rem 0 1rem 4rem;
+        background-image: 
+            repeating-radial-gradient(circle at 0 0, transparent 0, #a7d4fd 2.5rem),
+            repeating-linear-gradient(#9ccffa55, #9ccffa);
+    }
+
+    .about .about__image {
+        width: 30%;
+        height: 80%;
+    }
+
+    .about .about__details-title {
+        font-size: 2.2rem;
+    }
+
+    .about__details .about__details-description {
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+    }
+
+    .footer .footer-links {
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (max-width: 1010px) {
+    .hero {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .hero .hero__image,
+    .hero .hero-course,
+    .career .career__details,
+    .career .career__image,
+    .about .about__details {
+        width: 100%;
+    }
+
+    .hero .hero__image {
+        aspect-ratio: 1/1;
+    }
+
+    .career {
+        flex-direction: column;
+    }
+
+    .about {
+        height: auto;
+        padding: 2rem;
+    }
+
+    .about .about__image {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        padding: 1.25rem;
+    }
+
+    .hero {
+        gap: 2rem;
+        padding: 0 1.25rem;
+    }
+
+    .hero-course .hero-course__title {
+        font-size: 2rem;
+    }
+
+    .separator {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .program {
+        padding: 0 1.25rem;
+    }
+
+    .program .program__info .program__title {
+        font-size: 1.6rem;
+    }
+
+    .program .program__info .program__details {
+        flex-direction: column;
+    }
+
+    .program__details .program__details-duration,
+    .program__details .program__details-format,
+    .course-list .course-list__item {
+        width: 100%;
+    }
+
+    .course-list {
+        padding: 0 1.25rem;
+    }
+
+    .career {
+        padding: 0 1.25rem;
+        margin-top: 3rem;
+    }
+
+    .career .career__image .career__image-photo {
+        height: auto;
+        aspect-ratio: 1/1;
+    }
+
+    .career .career__details .career__title {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .about {
+        margin: 2.5rem 1.25rem 0 1.25rem;
+    }
+
+    .about .about__details .about__details-title {
+        font-size: 2rem;
+    }
+
+    .subscription .subscription__title {
+        font-size: 2rem;
+    }
+
+    .subscription .subscription__description {
+        font-size: 0.9rem;
+    }
+
+    .subscription__form .subscription__input {
+        width: 17.5rem;
+    }
+
+    .footer__branding {
+        display: none;
+    }
+
+    .footer__link {
+        font-size: 0.9rem;
+    }
 }
